@@ -1,0 +1,265 @@
+body {
+  background-color: #fafafa;
+  font-family: "Poppins";
+}
+header h1 {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: red;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  padding: 1rem 3rem;
+  gap: 2rem;
+}
+
+/* Chat section */
+.chat-container {
+  background-color: aquamarine;
+  height: 70vh;
+  display: grid;
+  grid-template-rows: 1fr 7fr 1fr;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0.5rem;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size: 1rem;
+  padding-left: 1rem;
+  background-color: rgb(236, 233, 233);
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.chat-messages {
+  overflow-y: auto;
+  padding: 10px;
+  background-image: url("/images/background/background-img.jpg");
+}
+
+.chat-footer {
+  display: flex;
+  padding: 10px;
+  background-color: lightgray;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.chat-footer input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chat-footer input:focus {
+  outline: none;
+}
+
+.chat-footer button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+.online-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.username {
+  margin-right: 2rem;
+}
+
+.typing-user {
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.message-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-content-header {
+  display: flex;
+  justify-content: space-between;
+  min-width: 10rem;
+  padding-top: 0.2rem;
+  font-size: 0.8rem;
+}
+
+.chat-message {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.user-message {
+  justify-content: flex-end;
+  align-items: end;
+}
+
+.user-message .message-content {
+  background-color: blue;
+  padding: 0.2rem 1rem;
+  color: white;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.sender-message {
+  justify-content: flex-start;
+  align-items: end;
+  z-index: 1;
+}
+
+.sender-message .message-content {
+  background-color: white;
+  padding: 0.2rem 1rem;
+  color: black;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.message-username {
+  font-weight: bold;
+}
+
+.message-text {
+  font-size: 0.9rem;
+  max-width: 30vw;
+}
+
+.chat-notifications {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.notification-text {
+  background-color: grey;
+  color: white;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  border-radius: 1rem;
+}
+
+.user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  font-size: 0.9rem;
+}
+
+.online-users-container-header {
+  background-color: blue;
+  color: white;
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 0.5rem 0;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.typing-user {
+  display: none;
+}
+.online-member {
+  border-radius: 0.5rem;
+  background-color: lightgray;
+  color: black;
+  width: 100%;
+  padding: 0.5rem 0;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 500px;
+  border-radius: 0.5rem;
+}
+.modal-content h2,
+.modal-content p {
+  text-align: center;
+}
+
+/* Style the form */
+.modal-content form {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.modal-content input {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.modal-content form button {
+  padding: 0.3rem;
+  color: white;
+  background-color: green;
+  border-radius: 0.2rem;
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+.modal-content form label {
+  font-size: 0.8rem;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  header h1 {
+    padding: 0;
+  }
+}
